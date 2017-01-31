@@ -36,7 +36,10 @@ public:
 
 
 	void print(){
-		cout<<type<<":"<<value<<" | ";
+		if(value<0.0001)	
+			cout<<type<<":"<<0<<" | ";
+		else
+			cout<<type<<":"<<value<<" | ";
 	}
 
 };
@@ -69,6 +72,9 @@ public:
 
 
 	void print(){
+		if(this==NULL)
+			return;
+
 		list<HistData>::iterator it = data.begin();
 		while(it!=data.end()){
 			it->print();
